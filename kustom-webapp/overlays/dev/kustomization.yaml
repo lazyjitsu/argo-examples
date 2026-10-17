@@ -1,9 +1,11 @@
-bases:
+resources:
 - ../../base
 
 patches:
- - patch.yaml
-
-configMapGenerator:
-- name: mykustom-map
-  env: config.properties
+  - path: patch.yaml
+    target:
+      kind: Deployment
+      name: mykustom-app
+# configMapGenerator:
+# - name: mykustom-map
+#   env: config.properties
